@@ -1,0 +1,25 @@
+# vim: set filetype=sh:
+#
+# To modify this config, create a local configuration file (like 01-config-local)
+# in the same directory and proceed writing your configuration there.
+
+# Set the modifier key used for all keybindings
+MOD=Super
+
+# Set the default modifier key for all keybindings
+RESIZE_STEP=0.05
+
+# Use Alt-{Shift-}Tab to cycle windows independently of the modifier used
+OVERRIDE_ALT_TAB=true
+
+# Use this array to define names for the tags. One tag will be created for every name.
+# If the array is empty, one tag named '1' will be created.
+TAG_NAMES=( {1..9} )
+
+# Define shourtcut-keys for the tags. If any entry is left
+# empty, no key will be assigned to the corresponding tag.
+TAG_KEYS=( {1..9} )
+
+# Focus new windows by default
+# Allowed values: on, off
+RULE_AUTOFOCUS=on

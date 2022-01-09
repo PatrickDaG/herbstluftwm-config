@@ -1,0 +1,30 @@
+#!/bin/bash
+#
+# Herbstluftwm autostart file.
+# This file will automatically load all files ${HOME}/.config/herbstluftwm/autostart.d
+
+current_script="${HOME}/.config/herbstluftwm/autostart"
+
+# Override herbstclient to display errors with filename & parameters
+herbstclient() {
+	command herbstclient "$@" || {
+		echo " [1;33m* WARNING:[m herbstclient returned $?"
+		echo " [1;33m*[m $current_script:"
+		echo " [1;33m*[m   herbstclient $*"
+	}
+}
+
+herbstclient emit_hook reload
+
+# remove all existing keybindings
+herbstclient keyunbind --all
+
+# Load all files in /etc/herbstluftwm.d/
+for script in ${HOME}/.config/herbstluftwm/autostart.d/* ; do
+	current_script=$script
+	[[ -r $script ]] && . "$script"
+done
+unset script current_script
+
+# unlock, just to be sure
+herbstclient unlock

@@ -1,0 +1,26 @@
+# vim: set filetype=sh:
+#
+# To modify this config, create a local configuration file (like 31-tags-local)
+# in the same directory and proceed writing your configuration there.
+
+# Set current layout and default layout to grid
+herbstclient set_layout grid
+herbstclient set default_frame_layout 3
+
+# If no tag names are set, create a single tag named '1'
+if [[ ${#TAG_NAMES[@]} == 0 ]] ; then
+	TAG_NAMES=( 1 )
+fi
+
+# create tags and assign keybindings
+herbstclient rename default "${TAG_NAMES[0]}" || true
+for i in ${!TAG_NAMES[@]} ; do
+    herbstclient add "${TAG_NAMES[$i]}"
+
+    key="${TAG_KEYS[$i]}"
+    if [[ -n $key ]] ; then
+        herbstclient keybind "$MOD-$key" use_index "$i"
+        herbstclient keybind "$MOD-Shift-$key" move_index "$i"
+    fi
+done
+unset key i

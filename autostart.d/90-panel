@@ -1,0 +1,6 @@
+# vim: set filetype=sh:
+#
+# To modify this config, create a local configuration file (like 91-panel-local)
+# in the same directory and proceed writing your configuration there.
+
+${HOME}/.config/polybar/launch.sh

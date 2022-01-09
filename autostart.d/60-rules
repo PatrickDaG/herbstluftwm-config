@@ -1,0 +1,19 @@
+# vim: set filetype=sh:
+#
+# To modify this config, create a local configuration file (like 61-rules-local)
+# in the same directory and proceed writing your configuration there.
+
+# Delete all rules
+herbstclient unrule --all
+
+# Focus new clients by default
+herbstclient rule focus=$RULE_AUTOFOCUS
+
+# Focus dialogs
+herbstclient rule windowtype='_NET_WM_WINDOW_TYPE_DIALOG' focus=on
+
+# Do not manage windows of type NOTIFICATION, DOCK, DESKTOP
+herbstclient rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK|DESKTOP)' manage=off
+
+# Use pseudotiles for windows of type DIALOG, UTILITY, SPLASH
+herbstclient rule windowtype~'_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' pseudotile=on

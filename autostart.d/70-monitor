@@ -1,0 +1,11 @@
+# vim: set filetype=sh:
+#
+# To modify this config, create a local configuration file (like 71-monitor-local)
+# in the same directory and proceed writing your configuration there.
+
+# do multi monitor setup here, e.g.:
+# herbstclient set_monitors 1280x1024+0+0 1280x1024+1280+0
+# or simply:
+herbstclient set auto_detect_monitors 1
+autorandr -c
+herbstclient detect_monitors

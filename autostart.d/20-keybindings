@@ -1,0 +1,85 @@
+# vim: set filetype=sh:
+#
+# To modify this config, create a local configuration file (like 21-keybindings-local)
+# in the same directory and proceed writing your configuration there.
+
+# General
+herbstclient keybind $MOD-q             close
+herbstclient keybind $MOD-Shift-r       reload
+herbstclient keybind $MOD-Shift-Escape  spawn ${HOME}/.config/rofi/powermenu/powermenu.sh
+
+# Moving
+herbstclient keybind $MOD-Shift-Left   shift left
+herbstclient keybind $MOD-Shift-Down   shift down
+herbstclient keybind $MOD-Shift-Up     shift up
+herbstclient keybind $MOD-Shift-Right  shift right
+
+herbstclient keybind $MOD-Shift-h      shift left
+herbstclient keybind $MOD-Shift-j      shift down
+herbstclient keybind $MOD-Shift-k      shift up
+herbstclient keybind $MOD-Shift-l      shift right
+
+# Resizing
+herbstclient keybind $MOD-Control-Left   resize left +$RESIZE_STEP
+herbstclient keybind $MOD-Control-Down   resize down +$RESIZE_STEP
+herbstclient keybind $MOD-Control-Up     resize up +$RESIZE_STEP
+herbstclient keybind $MOD-Control-Right  resize right +$RESIZE_STEP
+
+herbstclient keybind $MOD-Control-h      resize left +$RESIZE_STEP
+herbstclient keybind $MOD-Control-j      resize down +$RESIZE_STEP
+herbstclient keybind $MOD-Control-k      resize up +$RESIZE_STEP
+herbstclient keybind $MOD-Control-l      resize right +$RESIZE_STEP
+
+herbstclient keybind $MOD-Shift-Control-Left   resize right -$RESIZE_STEP
+herbstclient keybind $MOD-Shift-Control-Down   resize up -$RESIZE_STEP
+herbstclient keybind $MOD-Shift-Control-Up     resize down -$RESIZE_STEP
+herbstclient keybind $MOD-Shift-Control-Right  resize left -$RESIZE_STEP
+
+herbstclient keybind $MOD-Shift-Control-h      resize right -$RESIZE_STEP
+herbstclient keybind $MOD-Shift-Control-j      resize up -$RESIZE_STEP
+herbstclient keybind $MOD-Shift-Control-k      resize down -$RESIZE_STEP
+herbstclient keybind $MOD-Shift-Control-l      resize left -$RESIZE_STEP
+
+# Focusing
+herbstclient keybind $MOD-Left  focus left
+herbstclient keybind $MOD-Down  focus down
+herbstclient keybind $MOD-Up    focus up
+herbstclient keybind $MOD-Right focus right
+
+herbstclient keybind $MOD-h     focus left
+herbstclient keybind $MOD-j     focus down
+herbstclient keybind $MOD-k     focus up
+herbstclient keybind $MOD-l     focus right
+
+herbstclient keybind $MOD-BackSpace   cycle_monitor
+herbstclient keybind $MOD-c           cycle
+herbstclient keybind $MOD-i           jumpto urgent
+herbstclient keybind $MOD-Tab         cycle_all +1
+herbstclient keybind $MOD-Shift-Tab   cycle_all -1
+
+if [[ $OVERRIDE_ALT_TAB == true ]] ; then
+	herbstclient keybind Alt-Tab           cycle_all +1
+	herbstclient keybind Alt-Shift-Tab     cycle_all -1
+fi
+
+# Tag cycle
+herbstclient keybind $MOD-period  use_index +1 --skip-visible
+herbstclient keybind $MOD-comma   use_index -1 --skip-visible
+
+if [[ $MOD != Alt ]] && [[ $MOD != Mod1 ]] ; then
+	herbstclient keybind $MOD-Alt-Right  use_index +1
+	herbstclient keybind $MOD-Alt-Left   use_index -1
+fi
+
+# Splitting frames
+herbstclient keybind $MOD-s              split bottom
+herbstclient keybind $MOD-v              split right
+herbstclient keybind $MOD-Control-space  split explode
+
+# Layouting
+herbstclient keybind $MOD-Return       fullscreen toggle
+herbstclient keybind $MOD-r            remove
+herbstclient keybind $MOD-f            floating toggle
+herbstclient keybind $MOD-p            pseudotile toggle
+herbstclient keybind $MOD-space        cycle_layout +1
+herbstclient keybind $MOD-Shift-space  cycle_layout -1

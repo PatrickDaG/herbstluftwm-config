@@ -1,0 +1,13 @@
+herbstclient keybind XF86AudioRaiseVolume chain , spawn pactl set-sink-mute @DEFAULT_SINK@ 0 , spawn pactl set-sink-volume @DEFAULT_SINK@ +5%
+herbstclient keybind XF86AudioLowerVolume chain , spawn pactl set-sink-mute @DEFAULT_SINK@ 0 , spawn pactl set-sink-volume @DEFAULT_SINK@ -5%
+herbstclient keybind XF86AudioMute spawn pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+herbstclient keybind XF86AudioPrev spawn playerctl -p spotify previous
+herbstclient keybind XF86AudioNext spawn playerctl -p spotify next
+herbstclient keybind XF86AudioPlay spawn playerctl -p spotify play-pause
+
+#dependant on my own backup script being in path
+herbstclient keybind XF86MonBrightnessUp spawn backlight +5
+herbstclient keybind XF86MonBrightnessDown spawn backlight -5
+
+herbstclient keybind $MOD-w spawn touchtoggle

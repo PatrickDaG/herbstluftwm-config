@@ -1,0 +1,9 @@
+# vim: set filetype=sh:
+#
+# To modify this config, create a local configuration file (like 11-mouse-local)
+# in the same directory and proceed writing your configuration there.
+
+herbstclient mouseunbind --all
+herbstclient mousebind $MOD-Button1 move
+herbstclient mousebind $MOD-Button2 zoom
+herbstclient mousebind $MOD-Button3 resize
