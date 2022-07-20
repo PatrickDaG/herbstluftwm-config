@@ -7,7 +7,8 @@ herbstclient keybind XF86AudioNext spawn playerctl -p spotify next
 herbstclient keybind XF86AudioPlay spawn playerctl -p spotify play-pause
 
 #dependant on my own backup script being in path
-herbstclient keybind XF86MonBrightnessUp spawn backlight +5
-herbstclient keybind XF86MonBrightnessDown spawn backlight -5
+herbstclient keybind XF86MonBrightnessUp spawn /home/patrick/scripts/backlight.sh +5
+herbstclient keybind XF86MonBrightnessDown spawn /home/patrick/scripts/backlight.sh -5
+herbstclient keybind XF86RFKill spawn rfkill toggle wlan
 
 herbstclient keybind $MOD-w spawn touchtoggle

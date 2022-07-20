@@ -7,6 +7,8 @@ herbstclient keybind $MOD-t spawn kitty
 herbstclient keybind Menu spawn ${HOME}/.config/rofi/launchers/ribbon/launcher.sh
 herbstclient keybind Ctrl-Menu spawn prime-run ${HOME}/.config/rofi/launchers/ribbon/launcher.sh
 herbstclient keybind $MOD-b spawn firefox
+herbstclient keybind $MOD-m spawn thunderbird
+herbstclient keybind $MOD-l spawn systemctl suspend
 herbstclient keybind $MOD-F12 spawn /home/patrick/scripts/fix_shit.sh
 #herbstclient keybind $MOD-???? spawn quickterm/awaiting mode next key: m -> Telegram etc.
 
